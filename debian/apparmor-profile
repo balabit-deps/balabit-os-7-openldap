@@ -33,6 +33,8 @@
   /etc/gss/mech.d/   r,
   /etc/gss/mech.d/* kr,
   /etc/krb5.keytab kr,
+  /etc/krb5/user/*/client.keytab kr,
+  owner /tmp/krb5cc_* rwk,
   /var/tmp/ rw,
   /var/tmp/** rw,
 
