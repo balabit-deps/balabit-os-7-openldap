@@ -1,3 +1,12 @@
+openldap (2.4.45+dfsg-1ubuntu1.2) bionic; urgency=medium
+
+  * Fix sysv-generator unit file by customizing parameters (LP: #1821343)
+    - d/slapd-remain-after-exit.conf: Override RemainAfterExit to allow
+      correct systemctl status for slapd daemon.
+    - d/slapd.install: place override file in correct location.
+
+ -- Heitor Alves de Siqueira <halves@canonical.com>  Wed, 10 Apr 2019 09:53:11 -0300
+
 openldap (2.4.45+dfsg-1ubuntu1.1) bionic; urgency=medium
 
   * d/apparmor-profile: update apparmor profile to allow reading of
