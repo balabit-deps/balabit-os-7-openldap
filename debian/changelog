@@ -1,3 +1,23 @@
+openldap (2.4.45+dfsg-1ubuntu1.3) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: rootDN proxyauthz not restricted to its own databases
+    - debian/patches/CVE-2019-13057-1.patch: add restriction to
+      servers/slapd/saslauthz.c.
+    - debian/patches/CVE-2019-13057-2.patch: add tests to
+      tests/data/idassert.out, tests/data/slapd-idassert.conf,
+      tests/data/test-idassert1.ldif, tests/scripts/test028-idassert.
+    - debian/patches/CVE-2019-13057-3.patch: fix typo in
+      tests/scripts/test028-idassert.
+    - debian/patches/CVE-2019-13057-4.patch: fix typo in
+      tests/scripts/test028-idassert.
+    - CVE-2019-13057
+  * SECURITY UPDATE: SASL SSF not initialized per connection
+    - debian/patches/CVE-2019-13565.patch: zero out sasl_ssf in
+      connection_init in servers/slapd/connection.c.
+    - CVE-2019-13565
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 26 Jul 2019 13:27:16 -0400
+
 openldap (2.4.45+dfsg-1ubuntu1.2) bionic; urgency=medium
 
   * Fix sysv-generator unit file by customizing parameters (LP: #1821343)

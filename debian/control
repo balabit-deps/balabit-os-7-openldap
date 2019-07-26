@@ -1,7 +1,8 @@
 Source: openldap
 Section: net
 Priority: optional
-Maintainer: Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian OpenLDAP Maintainers <pkg-openldap-devel@lists.alioth.debian.org>
 Uploaders: Steve Langasek <vorlon@debian.org>,
  Torsten Landschoff <torsten@debian.org>,
  Matthijs Möhlmann <matthijs@cacholong.nl>,

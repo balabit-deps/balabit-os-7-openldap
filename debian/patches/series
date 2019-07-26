@@ -27,3 +27,8 @@ ITS6035-olcauthzregex-needs-restart.patch
 set-maintainer-name
 ITS8650-retry-gnutls_handshake-after-GNUTLS_E_AGAIN.patch
 fix-ldap-distribution.patch
+CVE-2019-13057-1.patch
+CVE-2019-13057-2.patch
+CVE-2019-13057-3.patch
+CVE-2019-13057-4.patch
+CVE-2019-13565.patch
