@@ -1,0 +1,41 @@
+From d40b357f5da9a94d2f4f541c21bde02610d9cd3b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ond=C5=99ej=20Kuzn=C3=ADk?= <ondra@mistotebe.net>
+Date: Mon, 17 Jun 2019 12:49:25 +0200
+Subject: [PATCH] ITS#8964 Do not free original filter
+
+---
+ servers/slapd/overlays/rwm.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+Origin: upstream, http://www.openldap.org/devel/gitweb.cgi?p=openldap.git;a=commitdiff;h=d40b357f5da9a94d2f4f541c21bde02610d9cd3b
+Bug: https://openldap.org/its/?findid=8964
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/openldap/+bug/1838370
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=934277
+
+diff --git a/servers/slapd/overlays/rwm.c b/servers/slapd/overlays/rwm.c
+index 0f1b00d793..d863a23910 100644
+--- a/servers/slapd/overlays/rwm.c
++++ b/servers/slapd/overlays/rwm.c
+@@ -125,11 +125,15 @@ rwm_op_rollback( Operation *op, SlapReply *rs, rwm_op_state *ros )
+ 		break;
+ 	case LDAP_REQ_SEARCH:
+ 		op->o_tmpfree( ros->mapped_attrs, op->o_tmpmemctx );
+-		filter_free_x( op, op->ors_filter, 1 );
+-		op->o_tmpfree( op->ors_filterstr.bv_val, op->o_tmpmemctx );
+ 		op->ors_attrs = ros->ors_attrs;
+-		op->ors_filter = ros->ors_filter;
+-		op->ors_filterstr = ros->ors_filterstr;
++		if ( op->ors_filter != ros->ors_filter ) {
++			filter_free_x( op, op->ors_filter, 1 );
++			op->ors_filter = ros->ors_filter;
++		}
++		if ( op->ors_filterstr.bv_val != ros->ors_filterstr.bv_val ) {
++			op->o_tmpfree( op->ors_filterstr.bv_val, op->o_tmpmemctx );
++			op->ors_filterstr = ros->ors_filterstr;
++		}
+ 		break;
+ 	case LDAP_REQ_EXTENDED:
+ 		if ( op->ore_reqdata != ros->ore_reqdata ) {
+-- 
+2.20.1
+
