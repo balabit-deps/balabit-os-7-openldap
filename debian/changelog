@@ -1,3 +1,12 @@
+openldap (2.4.45+dfsg-1ubuntu1.5) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: denial of service via nested search filters
+    - debian/patches/CVE-2020-12243.patch: limit depth of nested filters in
+      servers/slapd/filter.c.
+    - CVE-2020-12243
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Fri, 01 May 2020 13:11:02 -0400
+
 openldap (2.4.45+dfsg-1ubuntu1.4) bionic; urgency=medium
 
   * d/p/rwm-do-not-free-original-filter.patch: Fix slapd segfault (LP: #1838370)
