@@ -1,5 +1,5 @@
 # vim:syntax=apparmor
-# Last Modified: Fri Jan  4 15:18:13 2008
+# Last Modified: Fri Jun  6 13:51:00 2020
 # Author: Jamie Strandboge <jamie@ubuntu.com>
 
 #include <tunables/global>
@@ -49,6 +49,7 @@
   /{,var/}run/slapd/* w,
   /{,var/}run/slapd/ldapi rw,
   /{,var/}run/nslcd/socket rw,
+  /{,var/}run/saslauthd/mux rw,
 
   /usr/lib/ldap/ r,
   /usr/lib/ldap/* mr,

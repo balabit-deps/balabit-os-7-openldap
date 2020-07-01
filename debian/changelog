@@ -1,3 +1,16 @@
+openldap (2.4.45+dfsg-1ubuntu1.6) bionic; urgency=medium
+
+  [ Andreas Hasenack ]
+  * d/p/ITS-9171-Insert-callback-in-the-right-place.patch: Import upstream
+    patch to fix slapd crashing in certain configurations when a client
+    attempts a login to a locked account. (LP: #1866303)
+
+  [ Sergio Durigan Junior ]
+  * d/apparmor-profile: Update apparmor profile to grant access to
+    the saslauthd socket, so that SASL authentication works.  (LP: #1557157)
+
+ -- Andreas Hasenack <andreas@canonical.com>  Wed, 01 Jul 2020 16:38:55 -0300
+
 openldap (2.4.45+dfsg-1ubuntu1.5) bionic-security; urgency=medium
 
   * SECURITY UPDATE: denial of service via nested search filters
