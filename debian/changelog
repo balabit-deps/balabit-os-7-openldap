@@ -1,3 +1,9 @@
+openldap (2.4.45+dfsg-1ubuntu1.7bb1) bionic; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 14 Nov 2020 17:42:32 +0100
+
 openldap (2.4.45+dfsg-1ubuntu1.7) bionic-security; urgency=medium
 
   * SECURITY UPDATE: DoS via NULL pointer dereference
