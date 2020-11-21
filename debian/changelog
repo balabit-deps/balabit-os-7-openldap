@@ -1,3 +1,9 @@
+openldap (2.4.45+dfsg-1ubuntu1.8bb1) bionic; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 21 Nov 2020 04:40:15 +0100
+
 openldap (2.4.45+dfsg-1ubuntu1.8) bionic-security; urgency=medium
 
   * SECURITY UPDATE: assertion failure in Certificate List syntax
