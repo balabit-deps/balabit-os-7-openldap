@@ -1,3 +1,9 @@
+openldap (2.4.45+dfsg-1ubuntu1.10bb1) bionic; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Wed, 24 Feb 2021 20:38:20 +0100
+
 openldap (2.4.45+dfsg-1ubuntu1.10) bionic-security; urgency=medium
 
   * SECURITY UPDATE: DoS via malicious packet
